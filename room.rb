@@ -40,7 +40,7 @@ class Room
 
 
   def is_song_on_playlist(song)
-    @playlist.include?(@song1.title)
+    @playlist.include?(song)
   end
 
 

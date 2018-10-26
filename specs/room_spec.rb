@@ -36,8 +36,8 @@ class TestRoom < Minitest::Test
 
 
   def test_add_song_to_playlist()
-    expected = @song1
-    actual = @room1.add_song_to_playlist(@song1)
+    expected = @song1.title
+    actual = @room1.add_song_to_playlist(@song1.title)
     assert_equal(expected, actual)
   end
 
@@ -79,6 +79,17 @@ class TestRoom < Minitest::Test
     @room1.remove_guest(@guest2.name)
 
     assert_equal(1, @room1.how_many_guests)
+  end
+
+
+  def test_is_song_on_playlist
+    @room1.add_song_to_playlist(@song1)
+    @room1.add_song_to_playlist(@song2)
+
+    expected = true
+    actual = @room1.is_song_on_playlist(@song1.title)
+
+    assert_equal(expected, actual)
   end
 
 

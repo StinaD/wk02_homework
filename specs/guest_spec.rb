@@ -41,16 +41,8 @@ class TestGuest < Minitest::Test
     assert_equal("Billie Jean", @guest1.favourite_song_title)
   end
 
-  def test_is_favourite_song_on_list
-    @room1.add_song_to_playlist(@song1)
-    @room1.add_song_to_playlist(@song2)
 
-    expected = true
-    actual = @room1.is_song_on_playlist(@song1)
 
-    assert_equal(expected, actual)
-  end
 
-  
 
 end
