@@ -42,7 +42,15 @@ class TestGuest < Minitest::Test
   end
 
   def test_is_favourite_song_on_list
-    expected = "Whoo, my favourite!"
-    actual = 
+    @room1.add_song_to_playlist(@song1)
+    @room1.add_song_to_playlist(@song2)
+
+    expected = true
+    actual = @room1.is_song_on_playlist(@song1)
+
+    assert_equal(expected, actual)
+  end
+
+  
 
 end
