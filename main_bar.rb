@@ -8,4 +8,7 @@ class MainBar
     @number_of_rooms = number_of_rooms
   end
 
+
+  
+
 end

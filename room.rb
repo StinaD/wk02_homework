@@ -39,7 +39,7 @@ class Room
   end
 
 
-
+ def
 
 
 end
