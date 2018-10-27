@@ -9,6 +9,8 @@ class MainBar
     @daily_takings = 0
   end
 
-
+  def increase_daily_takings(amount)
+    @daily_takings += amount 
+  end
 
 end

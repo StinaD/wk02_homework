@@ -23,7 +23,9 @@ class TestMainBar < Minitest::Test
   end
 
 
-
+  def test_increase_daily_takings
+    assert_equal(10, @thecaraokebar.increase_daily_takings(10))
+  end
 
 
 end

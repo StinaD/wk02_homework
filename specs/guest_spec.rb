@@ -4,6 +4,7 @@ require_relative('../guest.rb')
 require_relative('../main_bar.rb')
 require_relative('../song.rb')
 require_relative('../room.rb')
+require('pry')
 
 class TestGuest < Minitest::Test
 
@@ -35,6 +36,7 @@ class TestGuest < Minitest::Test
   def test_pay_fee
     @guest1.pay_fee(@bar1)
     assert_equal(140, @guest1.wallet)
+    assert_equal(10, @bar1.entry_fee)
   end
 
   def test_has_sufficient_funds
@@ -54,6 +56,7 @@ class TestGuest < Minitest::Test
     actual = @guest1.favourite_song_on_playlist(@room1, @song3)
     assert_equal(expected, actual)
   end
+
 
 
 end

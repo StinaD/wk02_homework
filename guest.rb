@@ -14,8 +14,10 @@ class Guest
   end
 
   def pay_fee(bar)
+    amount = bar.entry_fee
     if sufficient_funds(bar)
-    @wallet -= bar.entry_fee
+      @wallet -= amount
+      bar.increase_daily_takings(amount)
     end
   end
 
