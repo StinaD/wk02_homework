@@ -12,11 +12,11 @@ class TestGuest < Minitest::Test
     @song2 = Song.new("Everybody")
     @song3 = Song.new("Billie Jean")
 
-    @guest1 = Guest.new("Guy", 150, @song3)
-
     @room1 = Room.new("Blue Room")
 
     @bar1 = MainBar.new("Jenny's Karaoke", 10, 6)
+
+    @guest1 = Guest.new("Guy", 150, @song3)
   end
 
 
@@ -37,12 +37,23 @@ class TestGuest < Minitest::Test
     assert_equal(140, @guest1.wallet)
   end
 
+  def test_has_sufficient_funds
+    assert_equal(true, @guest1.sufficient_funds(@bar1))
+  end
+
   def test_favourite_song
     assert_equal("Billie Jean", @guest1.favourite_song_title)
   end
 
+  def test_fave_song_on_playlist
+    @room1.add_song_to_playlist(@song1)
+    @room1.add_song_to_playlist(@song2)
+    @room1.add_song_to_playlist(@song3)
 
-
+    expected = "Whoo, Billie Jean, that's my favourite!"
+    actual = @guest1.favourite_song_on_playlist(@room1, @song3)
+    assert_equal(expected, actual)
+  end
 
 
 end

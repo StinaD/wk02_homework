@@ -83,8 +83,8 @@ class TestRoom < Minitest::Test
 
 
   def test_is_song_on_playlist
-    @room1.add_song_to_playlist(@song1)
-    @room1.add_song_to_playlist(@song2)
+    @room1.add_song_to_playlist(@song1.title)
+    @room1.add_song_to_playlist(@song2.title)
 
     expected = true
     actual = @room1.is_song_on_playlist(@song1.title)

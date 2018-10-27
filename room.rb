@@ -27,7 +27,7 @@ class Room
   end
 
 
-  def how_many_guests
+  def how_many_guests()
     return @guests_in_room.length
   end
 
